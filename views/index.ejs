@@ -1,0 +1,185 @@
+<%- include('partials/_header.ejs') %>
+
+    <div class="main-container">
+    <div class="content-flex">
+        <div class="content">
+            <h1 class="next-space-launch-header" style="text-align: center;color: whitesmoke;margin: 10px 0 20px 0;">Next Space Launch</h1>
+            <div class="common next-space-launch">
+                <div class="launch-info">
+                    <div class="next-one"></div>
+                    <div class="flex-part">
+                        <div class="title-part">
+                            <h2 style="margin-top: 40px;"><%= launch[0].name %></h2>
+                        </div>
+                        <div class="launch-status">
+                            <h3>GO</h3>
+                        </div>
+                        <div class="countdown">
+                            <div class="t"><h1>T-</h1></div>
+                            <div class="dayPart x">
+                                <h1 class="day">00</h1>
+                                <p>Days</p>
+                            </div>
+                            <div class="hourPart x">
+                                <h1 class="hour">00</h1>
+                                <p>Hours</p>
+                            </div>
+                            <div class="minutePart x">
+                                <h1 class="minute">00</h1>
+                                <p>Minutes</p>
+                            </div>
+                            <div class="secondPart x">
+                                <h1 class="second">00</h1>
+                                <p>Seconds</p>
+                            </div>
+                        </div>
+                        <div class="date">26.06.2022</div>
+                        <div class="watch-moreinfo-share">
+                            <div class="watch-info-share">
+                                <div class="watch"><a href="<%= launch[0].info %>">Watch</a></div>
+                                <div class="more-info"><a href="<%= launch[0].info %>">More Info</a></div>
+                                <div><a href="<%= launch[0].info %>">Share</a></div>
+                            </div>  
+                        </div>
+                        <script>
+                            const countdown = (date) => {
+                                const countDate = new Date(date).getTime();
+                                const now = new Date().getTime();
+                                const gap = countDate - now;
+                                const second = 1000;
+                                const minute = second * 60;
+                                const hour = minute * 60;
+                                const day = hour * 24;
+                                const textDay = Math.floor(gap / day);
+                                const textHour = Math.floor((gap % day) / hour);
+                                const textMinute = Math.floor((gap % hour) / minute);
+                                const textSecond = Math.floor((gap % minute) / second);
+                                document.querySelector('.day').innerText = textDay;
+                                document.querySelector('.hour').innerText = textHour;
+                                document.querySelector('.minute').innerText = textMinute;
+                                document.querySelector('.second').innerText = textSecond;
+                            }
+                            setInterval(countdown, 1000, '<%= launch[0].date %>');
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="upcoming-space-launches">
+                <h1 class="upcoming-header">Upcoming Space Launches</h1>
+                <div class="upcoming-elements">
+                    <% for(let i=0; i<launch.length; i++){ %> 
+                    <div class="upcondCard">
+                        <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
+                        <h2 class="a title"><%= launch[i].name %></h2>
+                        <h4 class="a"><%= launch[i].description %></h4>
+                        <h5 class="a more-info"><a style="text-decoration: none;color: whitesmoke;font-size: larger;" href="<%= launch[i].info %>">More Info</a></h5>
+                    </div>
+                    <% } %> 
+                </div>
+            </div>
+            <div class="common quick-links">
+                <h1 class="quick-header">Quick Links</h1>
+                <div class="quick-links-flex-part">
+                    <div class="astro-part quick-links-common">
+                        <img src="images/previous.png" alt="" class="astronaut">
+                        <h5>Previous<br>Launches</h5>
+                    </div>
+                    <div class="astro-part quick-links-common">
+                        <img src="images/astro.png" width="120px" height="140px" alt="" class="astronaut">
+                        <h5>Crewded<br>Launches</h5>
+                    </div>
+                    <div class="astro-part quick-links-common">
+                        <img src="images/california.png" width="120px" height="140px" alt="" class="astronaut">
+                        <h5>California<br>Launches</h5>
+                    </div>
+                    <div class="astro-part quick-links-common">
+                        <img src="images/florida.png" width="120px" height="140px" alt="" class="astronaut">
+                        <h5>Crewded<br>Launches</h5>
+                    </div>
+                    <div class="astro-part quick-links-common">
+                        <img src="images/reusable.png" width="120px" height="140px" alt="" class="astronaut">
+                        <h5>Reusable<br>Cores</h5>
+                    </div>
+                    <div class="astro-part quick-links-common">
+                        <img src="images/starship.png" width="120px" height="140px" alt="" class="astronaut">
+                        <h5>Starship<br>Program</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upcoming-space-launches">
+                <h1 class="upcoming-header">Events</h1>
+                <div class="upcoming-elements">
+                    <div class="upcondCard">
+                        <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
+                        <h2 class="a title">EVA-84</h2>
+                        <h4 class="a">20.01.2023 - EVA</h4>
+                        <h5 class="a more-info">MORE INFO</h5>
+                    </div>
+                    <div class="upcondCard">
+                        <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
+                        <h2 class="a title">US EVA-84</h2>
+                        <h4 class="a">20.01.2023 - EVA</h4>
+                        <h5 class="a more-info">MORE INFO</h5>
+                    </div>
+                    <div class="upcondCard">
+                        <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
+                        <h2 class="a title">US EVA-84</h2>
+                        <h4 class="a">20.01.2023 - EVA</h4>
+                        <h5 class="a more-info">MORE INFO</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-side-main">
+        <div class="right-side">
+            <div class="right-side-flex-part">
+                <h1 class="latest-news" style="margin: 15px 0;">Latest News</h1>
+                <div class="sidebar-news">
+                    <div class="side-card">
+                        <a href="https://spacenews.com/axiom-and-collins-only-bidders-for-nasa-spacesuit-contracts/" target="_blank" class="news-text">
+                        <div class="side-card-image">
+                        <div style="background-color: gray;width: 100%;height: 170px;border-radius: 10px;" class="news-img"></div>
+                        </div>
+                        <p style="margin-top: 15px;text-align: center;">Axiom and Collins only bidders for NASA spacesuit contracts</p></a>
+                    </div>
+                </div>
+                <div class="sidebar-news">
+                    <div class="side-card">
+                        <a href="https://spacenews.com/u-k-government-announces-new-space-sustainability-measures/" target="_blank" class="news-text">
+                        <div class="side-card-image">
+                            <div style="background-color: gray;width: 100%;height: 170px;border-radius: 10px;" class="news-img"></div>
+                        </div>
+                        <p style="margin-top: 15px;text-align: center;">U.K. government announces new space sustainability measures</p></a>
+                    </div>
+                </div>
+                <div class="sidebar-news">
+                    <div class="side-card">
+                        <a href="https://spacenews.com/new-head-of-space-force-acquisitions-looks-to-get-back-to-basics/" target="_blank" class="news-text">
+                        <div class="side-card-image">
+                            <div style="background-color: gray;width: 100%;height: 170px;border-radius: 10px;" class="news-img"></div>
+                        </div>
+                        <p style="margin-top: 15px;text-align: center;">New head of Space Force acquisitions looks to get back to basics</p></a>
+                    </div>
+                </div>
+                <div class="sidebar-news">
+                    <div class="side-card">
+                        <a href="https://www.nasaspaceflight.com/2022/06/insight-curiosity-june-2022/" target="_blank" class="news-text">
+                        <div class="side-card-image">
+                            <div style="background-color: gray;width: 100%;height: 170px;border-radius: 10px;" class="news-img"></div>
+                        </div>
+                        <p style="margin-top: 15px;text-align: center;">InSight teams push for more science in lander’s final months, Curiosity continues trek around Gale Crater</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <%- include('partials/_footer.ejs') %>
+
+</body>
+</html>
