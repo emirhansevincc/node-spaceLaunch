@@ -1,10 +1,14 @@
 const Launch = require('../models/Launch');
+const News = require('../models/News');
 
 exports.getHomePage = async(req, res) => {
     try {
         const launch = await Launch.find();
+        const news = await News.find();
+
         res.status(200).render('index',{
-            launch
+            launch,
+            news
         });
     } catch (error) {
         req.status(404).json({
@@ -15,10 +19,14 @@ exports.getHomePage = async(req, res) => {
 }
 
 exports.getLaunchesPage = async(req, res) => {
+
+    const news = await News.find();
+
     try {
         const launch = await Launch.find();
         res.status(200).render('launches',{
-            launch
+            launch,
+            news
         });
     } catch (error) {
         req.status(404).json({
@@ -28,6 +36,11 @@ exports.getLaunchesPage = async(req, res) => {
     }
 }
 
-exports.getAstronautsPage = (req, res) => {
-    res.status(200).render('astronauts');
+exports.getAstronautsPage = async(req, res) => {
+
+    const news = await News.find();
+
+    res.status(200).render('astronauts',{
+        news
+    });
 }
