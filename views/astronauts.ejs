@@ -11,7 +11,7 @@
                         <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
                         <h2 class="a title"><%= astronauts[x].name %></h2>
                         <h4 class="a"><%= astronauts[x].description.substr(0, 60) + '...' %></h4>
-                        <h5 class="a more-info">MORE INFO</h5>
+                        <h5 style="cursor: pointer;" class="a more-info"><a href="/astronauts/<%= astronauts[x].slug %>">MORE INFO</a></h5>
                     </div>
                     <% } %>
                 </div>

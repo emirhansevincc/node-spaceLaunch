@@ -1,0 +1,73 @@
+<%- include('partials/_header.ejs') %>
+
+    <div class="main-container">
+    <div class="content-flex">
+        <div class="content" style="margin-right: 30px;">
+            <h1 class="next-space-launch-header" style="text-align: center;color: whitesmoke;margin: 10px 0 20px 0;">All Launches</h1>
+            <div class="common next-space-launch launch-page">
+                <div class="launch-info">
+                    <div class="next-one"></div>
+                    <div class="flex-part">
+                        <div class="title-part" style="margin: 5px 0 25px 0;">
+                            <h2 style="margin-top: 25px;"><%= findAstronaut.name %></h2>
+                        </div>
+                        <hr style="width: 100%;border:1px solid rgb(52, 47, 47);">
+                        <div class="title-part" style="margin: 0 0 20px 0;">
+                            <h2 style="margin-top: 25px;text-align: center;">Agency: <%= findAstronaut.agency %></h2>
+                        </div>
+                        <hr style="width: 100%;border:1px solid rgb(52, 47, 47);">
+                        <div style="margin: 20px 0 10px 0;">
+                            <p>Nationality: <%= findAstronaut.nationality %></p>
+                            <p style="text-align: center;margin: 10px 0;">Date Of Birth: <%= findAstronaut.birthday %></p>
+                        </div>
+                        <hr style="width: 100%;border:1px solid rgb(52, 47, 47);">
+                        <div style="margin: 10px;display: flex;align-items: center;justify-content: center;height: 100%;">
+                            <p style="text-align: center;margin: 10px 0;"><%= findAstronaut.description %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="common next-space-launch" style="height: max-content;padding: 20px;">
+                <div>
+                    <div class="">
+                        <div style="margin: 5px 0 25px 0;height: 100%;">
+                            <h2 style="text-align: center;">Astronaut Biography</h2>
+                            <p style="margin-top: 25px;"><%= findAstronaut.biography %> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-side-main">
+        <div class="right-side">
+            <div class="right-side-flex-part">
+                <h1 class="latest-news" style="margin: 15px 0;">Latest News</h1>
+                <% for(let x=0; x<news.length; x++){ %> 
+                    <div class="sidebar-news">
+                        <div class="side-card">
+                            <a href="https://github.com/emirhansevincc" target="_blank" class="news-text">
+                                <div class="side-card-image">
+                                <div style="background-color: gray;width: 100%;height: 170px;border-radius: 10px;" class="news-img"></div>
+                                </div>
+                                <p style="margin-top: 15px;text-align: center;margin-right: 5px;margin-left: 5px;"><%= news[x].description %> </p>
+                                <p style="margin-top: 15px;text-align: end;margin-right:5px;"><%= news[x].from %> </p>
+                                <p style="margin-top: 6px;text-align: end;margin-right:5px;">
+                                    <%= news[x].date.getFullYear() %>.
+                                    <%= news[x].date.getMonth() %>.
+                                    <%= news[x].date.getDate() %>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <%- include('partials/_footer.ejs') %>
+    
+</body>
+</html>

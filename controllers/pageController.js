@@ -52,3 +52,15 @@ exports.getAstronautsPage = async(req, res) => {
         astronauts
     });
 }
+
+exports.getAstronautsSinglePage = async(req, res) => {
+
+    const findAstronaut = await Astronaut.findOne({slug: req.params.slug});
+    const news = await News.find();
+
+    res.status(200).render('astroSingle', {
+        findAstronaut,
+        news
+    });
+
+}
