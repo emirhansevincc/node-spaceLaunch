@@ -110,24 +110,19 @@
             <div class="upcoming-space-launches">
                 <h1 class="upcoming-header">Events</h1>
                 <div class="upcoming-elements">
+                    <% for(let i=0; i<events.length; i++){ %> 
                     <div class="upcondCard">
                         <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
-                        <h2 class="a title">EVA-84</h2>
-                        <h4 class="a">20.01.2023 - EVA</h4>
+                        <h2 class="a title"><%= events[i].title %></h2>
+                        <h4 class="a">
+                            (<%= events[i].date.getFullYear() %>-
+                            <%= events[i].date.getMonth() %>-
+                            <%= events[i].date.getDate() %>)
+                            <br>
+                            <%= events[i].description.substr(0, 50)+ '...' %></h4>
                         <h5 class="a more-info">MORE INFO</h5>
                     </div>
-                    <div class="upcondCard">
-                        <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
-                        <h2 class="a title">US EVA-84</h2>
-                        <h4 class="a">20.01.2023 - EVA</h4>
-                        <h5 class="a more-info">MORE INFO</h5>
-                    </div>
-                    <div class="upcondCard">
-                        <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
-                        <h2 class="a title">US EVA-84</h2>
-                        <h4 class="a">20.01.2023 - EVA</h4>
-                        <h5 class="a more-info">MORE INFO</h5>
-                    </div>
+                    <% } %> 
                 </div>
             </div>
 

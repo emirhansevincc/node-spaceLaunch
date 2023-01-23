@@ -1,5 +1,6 @@
 const Launch = require('../models/Launch');
 const News = require('../models/News');
+const Event = require('../models/Event');
 
 exports.getAdminPanel = (req, res) => {
     res.status(200).render('adminPanel');
@@ -33,6 +34,21 @@ exports.createNewNews = async(req, res) => {
             // date: req.body.newsDate,
             description: req.body.newsDescription,
             from: req.body.newsFrom
+        });
+        res.status(201).redirect('/')
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message: error
+        });
+    }
+}
+
+exports.createEvent = async(req, res) => {
+    try {
+        const event = await Event.create({
+            title: req.body.eventTitle,
+            description: req.body.eventDescription
         });
         res.status(201).redirect('/')
     } catch (error) {
