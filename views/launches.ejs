@@ -12,9 +12,15 @@
                             <div class="title-part">
                                 <h2 style="margin-top: 40px;"><%= launch[i].name %></h2>
                             </div>
-                            <div class="launch-status">
-                                <h3>GO</h3>
-                            </div>
+                            <% if(launch[i].status === 'GO'){ %> 
+                                <div class="launch-status">
+                                    <h3><%= launch[i].status %></h3>
+                                </div>
+                                <% }else if(launch[i].status === 'TBC'){ %>
+                                <div class="launch-status" style="background-color: rgb(184, 184, 53);">
+                                    <h3><%= launch[i].status %></h3> 
+                                </div>
+                                <% } %> 
                             <div class="countdown">
                                 <div class="t"><h1>T-</h1></div>
                                 <div class="dayPart x">
@@ -37,9 +43,9 @@
                             <div class="date"><%= launch[i].date %></div>
                             <div class="watch-moreinfo-share">
                                 <div class="watch-info-share">
-                                    <div class="watch"><a href="#">Watch</a></div>
-                                    <div class="more-info"><a href="#">More Info</a></div>
-                                    <div><a href="#">Share</a></div>
+                                    <div class="watch"><a href="<%= launch[i].info %>">Watch</a></div>
+                                    <div class="more-info"><a href="/launches/<%= launch[i].slug %>">More Info</a></div>
+                                    <div><a href="<%= launch[i].info %>">Share</a></div>
                                 </div>  
                             </div>
                         </div>
@@ -76,7 +82,7 @@
                                 <div class="side-card-image">
                                 <div style="background-color: gray;width: 100%;height: 170px;border-radius: 10px;" class="news-img"></div>
                                 </div>
-                                <p style="margin-top: 15px;text-align: center;margin-right: 5px;margin-left: 5px;"><%= news[x].description %> </p>
+                                <p style="margin-top: 15px;text-align: center;margin-right: 5px;margin-left: 5px;"><%= news[x].description.substr(0, 200) + '...' %> </p>
                                 <p style="margin-top: 15px;text-align: end;margin-right:5px;"><%= news[x].from %> </p>
                                 <p style="margin-top: 6px;text-align: end;margin-right:5px;">
                                     <%= news[x].date.getFullYear() %>.

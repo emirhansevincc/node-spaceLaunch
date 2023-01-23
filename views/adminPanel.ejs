@@ -4,7 +4,7 @@
 
     <div style="display: flex;align-items: center;justify-content: center;">
     <div style="display: flex;align-items: center;justify-content: center;max-width: 700px;flex-wrap: wrap;">
-        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 410px;display: flex;align-items: center;justify-content: center;">
+        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 570px;display: flex;align-items: center;justify-content: center;">
             <form action="/admin/panel/createNewLaunch" method="POST">
                 <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
                     <h2>Create New Launch</h2>
@@ -12,24 +12,17 @@
                     <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchDescription" placeholder="Launch Description">
                     <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchDate" placeholder="Date (YYYY-MM-DD)">
                     <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchInfo" placeholder="Launch Info Link">
+                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchRocket" placeholder="Launch Rocket">
+                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchWindowStart" placeholder="Launch Window Start">
+                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchWindowEnd" placeholder="Launch Window End">
+                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchCompany" placeholder="Launch Company">
+                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchStatus" placeholder="Launch Status (GO or TBC)">
                     <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid whitesmoke; cursor: pointer;">Create Lunch</button>
                 </div>
             </form>
         </div>
 
-        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 410px;display: flex;align-items: center;justify-content: center;">
-            <form action="/admin/panel/createNewNews" method="post">
-                <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
-                    <h2>Create New News</h2>
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsTitle" placeholder="News Title">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsDescription" placeholder="News Description">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsFrom" placeholder="News From">
-                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid whitesmoke; cursor: pointer;">Create News</button>
-                </div>
-            </form>
-        </div>
-
-        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 410px;display: flex;align-items: center;justify-content: center;">
+        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 460px;display: flex;align-items: center;justify-content: center;">
             <form action="/admin/panel/createNewAstronaut" method="post">
                 <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
                     <h2>Create New Astronaut</h2>
@@ -44,7 +37,19 @@
             </form>
         </div>
 
-        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 410px;display: flex;align-items: center;justify-content: center;">
+        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 300px;display: flex;align-items: center;justify-content: center;">
+            <form action="/admin/panel/createNewNews" method="post">
+                <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+                    <h2>Create New News</h2>
+                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsTitle" placeholder="News Title">
+                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsDescription" placeholder="News Description">
+                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsFrom" placeholder="News From">
+                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid whitesmoke; cursor: pointer;">Create News</button>
+                </div>
+            </form>
+        </div>
+
+        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 250px;display: flex;align-items: center;justify-content: center;">
             <form action="/admin/panel/createNewEvent" method="post">
                 <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
                     <h2>Create New Event</h2>

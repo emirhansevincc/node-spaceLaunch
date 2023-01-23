@@ -17,7 +17,12 @@ exports.createNewLaunch = async(req, res) => {
             name: req.body.launchName,
             date: req.body.launchDate,
             description: req.body.launchDescription,
-            info: req.body.launchInfo
+            info: req.body.launchInfo,
+            rocket: req.body.launchRocket,
+            windowStart: req.body.launchWindowStart,
+            windowEnd: req.body.launchWindowEnd,
+            company: req.body.launchCompany,
+            status: req.body.launchStatus,
         });
         res.status(201).redirect('/')
     } catch (error) {

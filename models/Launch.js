@@ -27,6 +27,26 @@ const LaunchSchema = new Schema({
         type: String,
         unique: true
     },
+    rocket: {
+        type: String,
+        required: true
+    },
+    windowStart: {
+        type: String,
+        required: true
+    },
+    windowEnd: {
+        type: String,
+        required: true
+    },
+    company: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: String,
+        required: true
+    },
 });
 
 LaunchSchema.pre('validate', function(next) {

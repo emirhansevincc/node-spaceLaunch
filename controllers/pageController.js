@@ -64,3 +64,15 @@ exports.getAstronautsSinglePage = async(req, res) => {
     });
 
 }
+
+exports.getLauncheSinglePage = async(req, res) => {
+
+    const findLaunch = await Launch.findOne({slug: req.params.slug});
+    const news = await News.find();
+
+    res.status(200).render('launchSingle', {
+        findLaunch,
+        news
+    });
+
+}

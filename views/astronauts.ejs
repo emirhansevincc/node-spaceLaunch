@@ -4,13 +4,13 @@
     <div class="content-flex">
         <div class="content">
             <div class="upcoming-space-launches">
-                <h1 class="upcoming-header">Upcoming Space Launches</h1>
+                <h1 class="upcoming-header">Astronauts</h1>
                 <div class="upcoming-elements">
                     <% for(let x=0; x<astronauts.length; x++){ %> 
-                    <div class="upcondCard">
+                    <div class="upcondCard astro">
                         <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
                         <h2 class="a title"><%= astronauts[x].name %></h2>
-                        <h4 class="a"><%= astronauts[x].description.substr(0, 60) + '...' %></h4>
+                        <h4 class="a" style="margin: 0 20px;"><%= astronauts[x].description.substr(0, 30) + '...' %></h4>
                         <h5 style="cursor: pointer;" class="a more-info"><a href="/astronauts/<%= astronauts[x].slug %>">MORE INFO</a></h5>
                     </div>
                     <% } %>
@@ -29,7 +29,7 @@
                                 <div class="side-card-image">
                                 <div style="background-color: gray;width: 100%;height: 170px;border-radius: 10px;" class="news-img"></div>
                                 </div>
-                                <p style="margin-top: 15px;text-align: center;margin-right: 5px;margin-left: 5px;"><%= news[x].description %> </p>
+                                <p style="margin-top: 15px;text-align: center;margin-right: 5px;margin-left: 5px;"><%= news[x].description.substr(0, 200) + '...' %> </p>
                                 <p class="from" style="margin-top: 15px;text-align: end;margin-right:5px;"><%= news[x].from %> </p>
                                 <p style="margin-top: 6px;text-align: end;margin-right:5px;">
                                     <%= news[x].date.getFullYear() %>.

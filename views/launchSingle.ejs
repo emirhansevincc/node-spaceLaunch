@@ -3,36 +3,35 @@
     <div class="main-container">
     <div class="content-flex">
         <div class="content" style="margin-right: 30px;">
-            <h1 class="next-space-launch-header" style="text-align: center;color: whitesmoke;margin: 10px 0 20px 0;"><%= findAstronaut.name %></h1>
+            <h1 class="next-space-launch-header" style="text-align: center;color: whitesmoke;margin: 10px 0 20px 0;">Details About <%= findLaunch.name %></h1>
             <div class="common next-space-launch launch-page">
                 <div class="launch-info">
                     <div class="next-one"></div>
                     <div class="flex-part">
                         <div class="title-part namee" style="margin: 5px 0 25px 0;">
-                            <h2 style="margin-top: 25px;"><%= findAstronaut.name %></h2>
+                            <h2 style="margin-top: 25px;"><%= findLaunch.name %></h2>
                         </div>
                         <hr style="width: 100%;border:1px solid rgb(52, 47, 47);">
                         <div class="title-part" style="margin: 0 0 20px 0;">
-                            <h2 style="margin-top: 25px;text-align: center;">Agency: <%= findAstronaut.agency %></h2>
+                            <h2 style="margin-top: 25px;text-align: center;">Company: <%= findLaunch.company %></h2>
+                            <h2 style="margin-top: 25px;text-align: center;">Rocket: <%= findLaunch.rocket %></h2>
                         </div>
                         <hr style="width: 100%;border:1px solid rgb(52, 47, 47);">
                         <div style="margin: 20px 0 10px 0;">
-                            <p>Nationality: <%= findAstronaut.nationality %></p>
-                            <p style="text-align: center;margin: 10px 0;">Date Of Birth: <%= findAstronaut.birthday %></p>
-                        </div>
-                        <hr style="width: 100%;border:1px solid rgb(52, 47, 47);">
-                        <div style="margin: 10px;display: flex;align-items: center;justify-content: center;height: 100%;">
-                            <p style="text-align: center;margin: 10px 0;"><%= findAstronaut.description %></p>
+                            <p style="text-align: center;margin: 10px 0;">Window Start: <%= findLaunch.windowStart %></p>
+                            <p style="text-align: center;margin: 10px 0;">Window End: <%= findLaunch.windowEnd %></p>
                         </div>
                     </div>
                 </div>
             </div>
+
+
             <div class="common next-space-launch" style="height: max-content;padding: 20px;">
                 <div>
                     <div class="">
                         <div style="margin: 5px 0 25px 0;height: 100%;">
-                            <h2 style="text-align: center;">Astronaut Biography</h2>
-                            <p style="margin: 30px;"><%= findAstronaut.biography %> </p>
+                            <h2 style="text-align: center;">ABOUT THIS FLIGHT</h2>
+                            <p style="margin: 30px;"><%= findLaunch.description %> </p>
                         </div>
                     </div>
                 </div>
