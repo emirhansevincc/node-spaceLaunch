@@ -7,5 +7,6 @@ router.route('/panel').get(admin.getAdminPanel);
 router.route('/panel/createNewLaunch').post(admin.createNewLaunch);
 router.route('/panel/createNewNews').post(admin.createNewNews);
 router.route('/panel/createNewEvent').post(admin.createEvent);
+router.route('/panel/createNewAstronaut').post(admin.createNewAstronaut);
 
 module.exports = router;

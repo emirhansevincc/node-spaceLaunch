@@ -1,6 +1,7 @@
 const Launch = require('../models/Launch');
 const News = require('../models/News');
 const Event = require('../models/Event');
+const Astronaut = require('../models/Astronaut');
 
 exports.getAdminPanel = (req, res) => {
     res.status(200).render('adminPanel');
@@ -49,6 +50,25 @@ exports.createEvent = async(req, res) => {
         const event = await Event.create({
             title: req.body.eventTitle,
             description: req.body.eventDescription
+        });
+        res.status(201).redirect('/')
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message: error
+        });
+    }
+}
+
+exports.createNewAstronaut = async(req, res) => {
+    try {
+        const astronaut = await Astronaut.create({
+            name: req.body.astroName,
+            description: req.body.astroDescription,
+            nationality: req.body.astroNationality,
+            birthday: req.body.astroBirthday,
+            agency: req.body.astroAgency,   
+            biography: req.body.astroBiography,
         });
         res.status(201).redirect('/')
     } catch (error) {

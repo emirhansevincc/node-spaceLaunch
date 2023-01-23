@@ -1,6 +1,7 @@
 const Launch = require('../models/Launch');
 const News = require('../models/News');
 const Event = require('../models/Event');
+const Astronaut = require('../models/Astronaut');
 
 exports.getHomePage = async(req, res) => {
     try {
@@ -27,7 +28,7 @@ exports.getLaunchesPage = async(req, res) => {
         const news = await News.find();
         const events = await Event.find();
         const launch = await Launch.find();
-        
+
         res.status(200).render('launches',{
             launch,
             news,
@@ -44,8 +45,10 @@ exports.getLaunchesPage = async(req, res) => {
 exports.getAstronautsPage = async(req, res) => {
 
     const news = await News.find();
+    const astronauts = await Astronaut.find();
 
     res.status(200).render('astronauts',{
-        news
+        news,
+        astronauts
     });
 }
