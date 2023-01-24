@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,133 @@
     <title>Document</title>
     <link rel="stylesheet" href="/style.css">
     <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+    <style>
+        * {box-sizing: border-box;}
+        .container {
+            font-family: 'Roboto';
+            width: 600px;
+            margin: 30px auto 0;
+            display: block;
+            background: #FFF;
+            padding: 10px 50px 50px;
+        }
+        .group {
+            position: relative;
+            margin-bottom: 45px;
+        }
+        input {
+            font-size: 18px;
+            padding: 10px 10px 10px 5px;
+            display: block;
+            width: 300px;
+            border: none;
+            border-bottom: 1px solid #757575;
+            border-radius: 10px 10px 0 0;
+        }
+        input:focus {outline: none;}
+        label {
+            color: #999;
+            font-size: 18px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 10px;
+            transition: 0.2s ease all;
+        }
+        input:focus~label,
+        input:valid~label {
+            top: -20px;
+            font-size: 14px;
+            color: #aeb7da;
+        }
+        .bar {
+            position: relative;
+            display: block;
+            width: 300px;
+        }
+        .bar:before,
+        .bar:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: #5264AE;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+        .bar:before {left: 50%;}
+        .bar:after {right: 50%;}
+        input:focus~.bar:before,
+        input:focus~.bar:after {width: 50%;}
+        .highlight {
+            position: absolute;
+            height: 60%;
+            width: 100px;
+            top: 25%;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        input:focus~.highlight {
+            -webkit-animation: inputHighlighter 0.3s ease;
+            -moz-animation: inputHighlighter 0.3s ease;
+            animation: inputHighlighter 0.3s ease;
+        }
+        @keyframes inputHighlighter {
+            from {background: #4467a0;}
+            to {
+                width: 0;
+                background: transparent;
+            }
+        }
+        form{
+            background-color: rgb(22, 22, 22);
+            padding: 30px;
+            border-radius: 20px;
+        }
+        button{
+            width: 50%;
+            padding: 6px;
+            background-color: transparent;
+            border: 3px solid #4467a0;
+            border-radius: 15px;
+            cursor: pointer;
+            color: whitesmoke;
+            transition: .2s;
+        }
+        button:hover{border: 3px solid #2254a4;}
+        .btn-sbm{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    </style>
 </head>
-<body class="flex">
-    
-    <div>
-        <div class="input-container flex column">
-            <h2 style="margin-bottom: 20px;">Welcome Admin</h2>
-            <form action="/">
-                <div class="inputs flex column">
-                    <input class="admin-inputs" type="email" name="email" placeholder="Enter email" required>
-                    <input class="admin-inputs" type="password" name="password" placeholder="Enter password" required>
-                    <button class="admin-inputs" style="cursor: pointer;" type="submit">Login</button>
-                </div>
-            </form>
-        </div>
+
+<body style="background-color: #111;">
+
+    <div class="" style="display: flex;align-items: center;justify-content: center;height: 100vh;background-color: #111;">
+        <form action="/admin/login" method="POST">
+            <div class="group" style="margin-bottom: 30px;">
+                <input type="text" name="adminEmail" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Email</label>
+            </div>
+            <div class="group">
+                <input type="password" name="adminPassword" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+            </div>
+            <div class="btn-sbm"><button type="submit">Login</button></div>
+        </form>
     </div>
-    
 </body>
+
 </html>

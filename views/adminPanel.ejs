@@ -1,6 +1,12 @@
 <%- include('partials/_header.ejs') %>
+<% if(whichAdmin){ %>
 
-    <h1 style="text-align: center;margin: 30px 0;">Welcome to the admin panel</h1>
+    <h1 style="text-align: center;margin: 30px 0;">Welcome To The Admin Panel <%= whichAdmin.name %> </h1>
+    <div style="display:flex;align-items:center;justify-content:center;margin-bottom:30px;">
+        <form action="/admin/panel/logout" method="get">
+            <button type="submit" style="background-color: transparent;color: whitesmoke;padding: 5px 10px;border: 3px solid rgb(63, 63, 172);border-radius: 15px;width: 200px;height: 45px;cursor: pointer;">Logout</button>
+        </form>
+    </div>
 
     <div style="display: flex;align-items: center;justify-content: center;">
     <div style="display: flex;align-items: center;justify-content: center;max-width: 700px;flex-wrap: wrap;">
@@ -61,6 +67,14 @@
         </div>
     </div>
     </div>
+
+<% }else{ %>
+    <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;height: 63vh;">
+        <h1 style="color: whitesmoke;">You are not logged in!</h1>
+        <a href="/admin" style="color: whitesmoke;">Login</a>
+    </div>
+<% } %>
+
 
 <%- include('partials/_footer.ejs') %>
     
