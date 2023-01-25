@@ -18,6 +18,20 @@ const NewsSchema = new Schema({
         type: String,
         required: true
     },
+    slug: {
+        type: String,
+        unique: true
+    }
+});
+
+NewsSchema.pre('validate', function(next) {
+
+    this.slug = slugify(this.title, { 
+        lower: true ,
+        strict: true
+    });
+
+    next();
 });
 
 const News = mongoose.model('News', NewsSchema);

@@ -8,8 +8,17 @@ const bcrypt = require("bcrypt");
 exports.getAdminPanel = async(req, res) => {
     const whichAdmin = await Admin.findById(req.session.adminId);
 
+    const launch = await Launch.find();
+    const news = await News.find();
+    const events = await Event.find();
+    const astronauts = await Astronaut.find();
+
     res.status(200).render('adminPanel', {
-        whichAdmin
+        whichAdmin,
+        launch,
+        news,
+        events,
+        astronauts
     });
     
     console.log(req.session.adminId);
@@ -142,4 +151,40 @@ exports.logoutAdmin = (req, res) => {
             res.status(200).redirect('/');
         }
     })
+}
+
+exports.deleteLaunch = async(req, res) => {
+    try {
+        await Launch.findOneAndRemove({slug: req.params.slug});
+        res.status(204).redirect('/admin/panel');
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message: error
+        });
+    }
+}
+
+exports.deleteAstronaut = async(req, res) => {
+    try {
+        await Astronaut.findOneAndRemove({slug: req.params.slug});
+        res.status(204).redirect('/admin/panel');
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message: error
+        });
+    }
+}
+
+exports.deleteEvent = async(req, res) => {
+    try {
+        await Event.findOneAndRemove({slug: req.params.slug});
+        res.status(204).redirect('/admin/panel');
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message: error
+        });
+    }
 }

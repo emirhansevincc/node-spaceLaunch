@@ -4,7 +4,7 @@ const adminRoute = require('./routes/adminRoute');
 const bodyParser = require('body-parser')
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-
+const methodOverride = require('method-override')
 
 const mongoose = require('mongoose');
 
@@ -27,7 +27,11 @@ app.use(
         saveUninitialized: true,
         store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/spaceLaunch' }),
     })
-  );
+);
+app.use(methodOverride('_method', { 
+    methods: ['POST', 'GET']    
+    }
+));
 
 app.use("*", (req, res, next) => {
     isAdminIn = req.session.adminId;

@@ -10,20 +10,20 @@
 
     <div style="display: flex;align-items: center;justify-content: center;">
     <div style="display: flex;align-items: center;justify-content: center;max-width: 700px;flex-wrap: wrap;">
-        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 570px;display: flex;align-items: center;justify-content: center;">
+        <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 580px;display: flex;align-items: center;justify-content: center;">
             <form action="/admin/panel/createNewLaunch" method="POST">
                 <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
                     <h2>Create New Launch</h2>
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchName" placeholder="Launch Name">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchDescription" placeholder="Launch Description">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchDate" placeholder="Date (YYYY-MM-DD)">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchInfo" placeholder="Launch Info Link">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchRocket" placeholder="Launch Rocket">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchWindowStart" placeholder="Launch Window Start">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchWindowEnd" placeholder="Launch Window End">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchCompany" placeholder="Launch Company">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchStatus" placeholder="Launch Status (GO or TBC)">
-                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid whitesmoke; cursor: pointer;">Create Lunch</button>
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchName" placeholder="Launch Name">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchDescription" placeholder="Launch Description">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchDate" placeholder="Date (YYYY-MM-DD)">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchInfo" placeholder="Launch Info Link">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchRocket" placeholder="Launch Rocket">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchWindowStart" placeholder="Launch Window Start">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchWindowEnd" placeholder="Launch Window End">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchCompany" placeholder="Launch Company">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="launchStatus" placeholder="Launch Status (GO or TBC)">
+                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid rgb(63, 63, 173); cursor: pointer;">Create Lunch</button>
                 </div>
             </form>
         </div>
@@ -32,13 +32,13 @@
             <form action="/admin/panel/createNewAstronaut" method="post">
                 <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
                     <h2>Create New Astronaut</h2>
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroName" placeholder="Astronaut Name">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroDescription" placeholder="Astronaut Description">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroNationality" placeholder="Astronaut Nationality">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroBirthday" placeholder="Astronaut Birthday (YYYY-MM-DD)">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroAgency" placeholder="Astronaut Agency">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroBiography" placeholder="Astronaut Biography">
-                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid whitesmoke; cursor: pointer;">Create Astronaut</button>
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroName" placeholder="Astronaut Name">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroDescription" placeholder="Astronaut Description">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroNationality" placeholder="Astronaut Nationality">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroBirthday" placeholder="Astronaut Birthday (YYYY-MM-DD)">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroAgency" placeholder="Astronaut Agency">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="astroBiography" placeholder="Astronaut Biography">
+                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid rgb(63, 63, 173); cursor: pointer;">Create Astronaut</button>
                 </div>
             </form>
         </div>
@@ -47,10 +47,10 @@
             <form action="/admin/panel/createNewNews" method="post">
                 <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
                     <h2>Create New News</h2>
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsTitle" placeholder="News Title">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsDescription" placeholder="News Description">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsFrom" placeholder="News From">
-                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid whitesmoke; cursor: pointer;">Create News</button>
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsTitle" placeholder="News Title">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsDescription" placeholder="News Description">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="newsFrom" placeholder="News From">
+                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid rgb(63, 63, 173); cursor: pointer;">Create News</button>
                 </div>
             </form>
         </div>
@@ -59,14 +59,108 @@
             <form action="/admin/panel/createNewEvent" method="post">
                 <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
                     <h2>Create New Event</h2>
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="eventTitle" placeholder="Event Title">
-                    <input type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="eventDescription" placeholder="Event Description">
-                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid whitesmoke; cursor: pointer;">Create Event</button>
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="eventTitle" placeholder="Event Title">
+                    <input class="panel-inputs" type="text" style="margin: 10px 0;width: 250px;padding: 8px;border-radius: 10px;" name="eventDescription" placeholder="Event Description">
+                    <button type="submit" style="background-color: transparent;padding: 5px 10px;color: whitesmoke;border-radius: 10px;border: 3px solid rgb(63, 63, 173); cursor: pointer;">Create Event</button>
                 </div>
             </form>
         </div>
     </div>
     </div>
+
+
+    <div class="table-part">
+        <h2 style="margin: 20px 0 10px 0;">Launches</h2>
+        <div class="table">
+            <table id="partials">
+                <tr>
+                    <th>Launches</th>
+                    <th>Company</th>
+                    <th>Edit / Delete</th>
+                </tr>
+                <% for(let i=0; i<launch.length; i++){ %> 
+                <tr>
+                    <td><%= launch[i].name %></td>
+                    <td><%= launch[i].company %></td>
+                    <td style="display: flex;align-items: center;justify-content: center;">
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">E</button>
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;"><a href="/admin/panel/deleteLaunch/<%= launch[i].slug %>?_method=DELETE">D</a></button>
+                    </td>
+                </tr>
+                <% } %> 
+            </table>
+        </div>
+    </div>
+
+    <div class="table-part">
+        <h2 style="margin: 20px 0 10px 0;">Astronauts</h2>
+        <div class="table">
+            <table id="partials">
+                <tr>
+                    <th>Name</th>
+                    <th>Agency</th>
+                    <th>Edit / Delete</th>
+                </tr>
+                <% for(let i=0; i<astronauts.length; i++){ %> 
+                <tr>
+                    <td><%= astronauts[i].name %></td>
+                    <td><%= astronauts[i].agency %></td>
+                    <td style="display: flex;align-items: center;justify-content: center;">
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">E</button>
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;"><a href="/admin/panel/deleteAstronaut/<%= astronauts[i].slug %>?_method=DELETE">D</a></button>
+                    </td>
+                </tr>
+                <% } %> 
+            </table>
+        </div>
+    </div>
+
+    <div class="table-part">
+        <h2 style="margin: 20px 0 10px 0;">News</h2>
+        <div class="table">
+            <table id="partials">
+                <tr>
+                    <th>Title</th>
+                    <th>From</th>
+                    <th>Edit / Delete</th>
+                </tr>
+                <% for(let i=0; i<news.length; i++){ %> 
+                <tr>
+                    <td><%= news[i].title.substr(0, 20) + '...' %></td>
+                    <td><%= news[i].from %></td>
+                    <td style="display: flex;align-items: center;justify-content: center;">
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">E</button>
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">D</button>
+                    </td>
+                </tr>
+                <% } %> 
+            </table>
+        </div>
+    </div>
+
+    <div class="table-part">
+        <h2 style="margin: 20px 0 10px 0;">Events</h2>
+        <div class="table">
+            <table id="partials">
+                <tr>
+                    <th>Event</th>
+                    <th>Description</th>
+                    <th>Edit / Delete</th>
+                </tr>
+                <% for(let i=0; i<events.length; i++){ %> 
+                <tr>
+                    <td><%= events[i].title %></td>
+                    <td><%= events[i].description.substr(0, 20) + '...' %></td>
+                    <td style="display: flex;align-items: center;justify-content: center;">
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">E</button>
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;"><a href="/admin/panel/deleteEvent/<%= events[i].slug %>?_method=DELETE">D</a></button>
+                    </td>
+                </tr>
+                <% } %> 
+            </table>
+        </div>
+    </div>
+
 
 <% }else{ %>
     <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;height: 63vh;">

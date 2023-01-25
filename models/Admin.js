@@ -22,11 +22,25 @@ const AdminSchema = new Schema({
     }
 });
 
+// AdminSchema.pre('save', function(next) {
+//     const admin = this;
+//     bcrypt.hash(admin.password, 10, (err, hash) => {
+//         admin.password = hash;
+//         next();
+//     });
+// });
+
 AdminSchema.pre('save', function(next) {
-    const admin = this;
-    bcrypt.hash(admin.password, 10, (err, hash) => {
-        admin.password = hash;
-        next();
+    const user = this;
+    if (!user.isModified('password')) return next();
+
+    bcrypt.genSalt(10, function(err, salt) {
+        if (err) return next(err);
+        bcrypt.hash(user.password, salt, function(err, hash) {
+            if (err) return next(err);
+            user.password = hash;
+            next();
+        });
     });
 });
 
