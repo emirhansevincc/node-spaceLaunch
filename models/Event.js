@@ -24,7 +24,7 @@ const EventSchema = new Schema({
 EventSchema.pre('validate', function(next) {
 
     this.slug = slugify(this.title, { 
-        lower: true ,
+        lower: true,
         strict: true
     });
 

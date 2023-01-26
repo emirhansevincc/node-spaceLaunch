@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const slugify = require('slugify')
 
 const NewsSchema = new Schema({
     title: {
@@ -25,12 +26,10 @@ const NewsSchema = new Schema({
 });
 
 NewsSchema.pre('validate', function(next) {
-
     this.slug = slugify(this.title, { 
         lower: true ,
         strict: true
     });
-
     next();
 });
 

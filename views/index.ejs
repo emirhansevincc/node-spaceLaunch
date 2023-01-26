@@ -1,5 +1,17 @@
 <%- include('partials/_header.ejs') %>
 
+    <% if (flashMessages) { %>
+        <% if (flashMessages.success) { %>
+            <div class="alert alert-success" style="display: flex;align-items: center;justify-content: center;background-color: green;color: whitesmoke;padding: 10px;">
+                <%= flashMessages.success %>
+            </div>
+    <% } else if (flashMessages.error) { %>
+        <div class="alert alert-danger">
+            <%= flashMessages.error %>
+        </div>
+        <% } %>
+    <% } %>
+
     <div class="main-container">
     <div class="content-flex">
         <div class="content">
@@ -73,14 +85,26 @@
             <div class="upcoming-space-launches">
                 <h1 class="upcoming-header">Upcoming Space Launches</h1>
                 <div class="upcoming-elements">
-                    <% for(let i=0; i<launch.length; i++){ %> 
+                    
                     <div class="upcondCard">
                         <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
-                        <h2 class="a title"><%= launch[i].name %></h2>
-                        <h4 class="a" style="margin: 0 10px;"><%= launch[i].description.substr(0, 40) + '...' %></h4>
-                        <h5 class="a more-info"><a style="text-decoration: none;color: whitesmoke;font-size: larger;" href="/launches/<%= launch[i].slug %> ">More Info</a></h5>
+                        <h2 class="a title"><%= launch[1].name.substr(0, 30) + '...' %></h2>
+                        <h4 class="a" style="margin: 0 10px;"><%= launch[1].description.substr(0, 40) + '...' %></h4>
+                        <h5 class="a more-info"><a style="text-decoration: none;color: whitesmoke;font-size: larger;" href="/launches/<%= launch[1].slug %> ">More Info</a></h5>
                     </div>
-                    <% } %> 
+                    <div class="upcondCard">
+                        <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
+                        <h2 class="a title"><%= launch[2].name.substr(0, 30) + '...' %></h2>
+                        <h4 class="a" style="margin: 0 10px;"><%= launch[2].description.substr(0, 40) + '...' %></h4>
+                        <h5 class="a more-info"><a style="text-decoration: none;color: whitesmoke;font-size: larger;" href="/launches/<%= launch[2].slug %> ">More Info</a></h5>
+                    </div>
+                    <div class="upcondCard">
+                        <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
+                        <h2 class="a title"><%= launch[3].name.substr(0, 30) + '...' %></h2>
+                        <h4 class="a" style="margin: 0 10px;"><%= launch[3].description.substr(0, 40) + '...' %></h4>
+                        <h5 class="a more-info"><a style="text-decoration: none;color: whitesmoke;font-size: larger;" href="/launches/<%= launch[3].slug %> ">More Info</a></h5>
+                    </div>
+                    
                 </div>
             </div>
             <div class="common quick-links">
@@ -119,13 +143,13 @@
                     <% for(let i=0; i<events.length; i++){ %> 
                     <div class="upcondCard">
                         <div style="width: 100%;background-color: gray;height: 350px;border-radius: 15px 15px 0 0;"></div>
-                        <h2 class="a title"><%= events[i].title %></h2>
+                        <h2 class="a title"><%= events[i].title.substr(0, 18) + '...' %></h2>
                         <h4 class="a">
                             (<%= events[i].date.getFullYear() %>-
                             <%= events[i].date.getMonth() %>-
                             <%= events[i].date.getDate() %>)
                             <br>
-                            <%= events[i].description.substr(0, 30)+ '...' %></h4>
+                            <%= events[i].description.substr(0, 20)+ '...' %></h4>
                         <h5 class="a more-info">MORE INFO</h5>
                     </div>
                     <% } %> 

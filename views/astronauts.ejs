@@ -7,7 +7,7 @@
                 <h1 class="upcoming-header">Astronauts</h1>
                 <div class="upcoming-elements">
                     <% for(let x=0; x<astronauts.length; x++){ %> 
-                    <div class="upcondCard astro">
+                    <div class="upcondCard astro" style="margin: 15px 0;">
                         <div style="width: 100%;background-color: gray;height: 340px;border-radius: 15px 15px 0 0;"></div>
                         <h2 class="a title"><%= astronauts[x].name %></h2>
                         <h4 class="a" style="margin: 0 20px;"><%= astronauts[x].description.substr(0, 30) + '...' %></h4>

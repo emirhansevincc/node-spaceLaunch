@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const methodOverride = require('method-override')
+const flash = require('connect-flash');
 
 const mongoose = require('mongoose');
 
@@ -32,6 +33,11 @@ app.use(methodOverride('_method', {
     methods: ['POST', 'GET']    
     }
 ));
+app.use(flash());
+app.use((req, res, next)=> {
+  res.locals.flashMessages = req.flash();
+  next();
+})
 
 app.use("*", (req, res, next) => {
     isAdminIn = req.session.adminId;

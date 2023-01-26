@@ -41,6 +41,7 @@ exports.createNewLaunch = async(req, res) => {
             company: req.body.launchCompany,
             status: req.body.launchStatus,
         });
+        req.flash("success", "Launch created successfully");
         res.status(201).redirect('/')
     } catch (error) {
         res.status(400).json({
@@ -54,15 +55,15 @@ exports.createNewNews = async(req, res) => {
     try {
         const news = await News.create({
             title: req.body.newsTitle,
-            // date: req.body.newsDate,
             description: req.body.newsDescription,
-            from: req.body.newsFrom
+            from: req.body.newsFrom,
         });
+        req.flash("success", "News created successfully");
         res.status(201).redirect('/')
     } catch (error) {
         res.status(400).json({
             status: 'fail',
-            message: error
+            error
         });
     }
 }
@@ -73,6 +74,7 @@ exports.createEvent = async(req, res) => {
             title: req.body.eventTitle,
             description: req.body.eventDescription
         });
+        req.flash("success", "Event created successfully");
         res.status(201).redirect('/')
     } catch (error) {
         res.status(400).json({
@@ -92,6 +94,7 @@ exports.createNewAstronaut = async(req, res) => {
             agency: req.body.astroAgency,   
             biography: req.body.astroBiography,
         });
+        req.flash("success", "Astronaut created successfully");
         res.status(201).redirect('/')
     } catch (error) {
         res.status(400).json({
@@ -156,6 +159,7 @@ exports.logoutAdmin = (req, res) => {
 exports.deleteLaunch = async(req, res) => {
     try {
         await Launch.findOneAndRemove({slug: req.params.slug});
+        req.flash("success", "Launch deleted successfully!");
         res.status(204).redirect('/admin/panel');
     } catch (error) {
         res.status(400).json({
@@ -168,6 +172,7 @@ exports.deleteLaunch = async(req, res) => {
 exports.deleteAstronaut = async(req, res) => {
     try {
         await Astronaut.findOneAndRemove({slug: req.params.slug});
+        req.flash("success", "Astronaut deleted successfully!");
         res.status(204).redirect('/admin/panel');
     } catch (error) {
         res.status(400).json({
@@ -180,6 +185,20 @@ exports.deleteAstronaut = async(req, res) => {
 exports.deleteEvent = async(req, res) => {
     try {
         await Event.findOneAndRemove({slug: req.params.slug});
+        req.flash("success", "Event deleted successfully!");
+        res.status(204).redirect('/admin/panel');
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message: error
+        });
+    }
+}
+
+exports.deleteNews = async(req, res) => {
+    try {
+        await News.findOneAndRemove({slug: req.params.slug});
+        req.flash("success", "News deleted successfully!");
         res.status(204).redirect('/admin/panel');
     } catch (error) {
         res.status(400).json({

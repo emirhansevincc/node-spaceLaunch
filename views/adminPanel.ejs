@@ -8,6 +8,18 @@
         </form>
     </div>
 
+    <% if (flashMessages) { %>
+        <% if (flashMessages.success) { %>
+          <div class="alert alert-success" style="display: flex;align-items: center;justify-content: center;background-color: green;color: whitesmoke;padding: 10px;">
+                <%= flashMessages.success %>
+            </div>
+      <% } else if (flashMessages.error) { %>
+       <div class="alert alert-danger">
+        <%= flashMessages.error %>
+        </div>
+        <% } %>
+      <% } %>
+
     <div style="display: flex;align-items: center;justify-content: center;">
     <div style="display: flex;align-items: center;justify-content: center;max-width: 700px;flex-wrap: wrap;">
         <div style="background-color: #222;padding: 20px;border-radius: 20px;margin: 30px;height: 580px;display: flex;align-items: center;justify-content: center;">
@@ -83,8 +95,7 @@
                     <td><%= launch[i].name %></td>
                     <td><%= launch[i].company %></td>
                     <td style="display: flex;align-items: center;justify-content: center;">
-                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">E</button>
-                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;"><a href="/admin/panel/deleteLaunch/<%= launch[i].slug %>?_method=DELETE">D</a></button>
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;cursor: pointer;"><a href="/admin/panel/deleteLaunch/<%= launch[i].slug %>?_method=DELETE">DELETE</a></button>
                     </td>
                 </tr>
                 <% } %> 
@@ -106,8 +117,7 @@
                     <td><%= astronauts[i].name %></td>
                     <td><%= astronauts[i].agency %></td>
                     <td style="display: flex;align-items: center;justify-content: center;">
-                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">E</button>
-                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;"><a href="/admin/panel/deleteAstronaut/<%= astronauts[i].slug %>?_method=DELETE">D</a></button>
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;cursor: pointer;"><a href="/admin/panel/deleteAstronaut/<%= astronauts[i].slug %>?_method=DELETE">DELETE</a></button>
                     </td>
                 </tr>
                 <% } %> 
@@ -129,8 +139,7 @@
                     <td><%= news[i].title.substr(0, 20) + '...' %></td>
                     <td><%= news[i].from %></td>
                     <td style="display: flex;align-items: center;justify-content: center;">
-                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">E</button>
-                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">D</button>
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;cursor: pointer;"><a href="/admin/panel/deleteNews/<%= news[i].slug %>?_method=DELETE">DELETE</a></button>
                     </td>
                 </tr>
                 <% } %> 
@@ -152,8 +161,7 @@
                     <td><%= events[i].title %></td>
                     <td><%= events[i].description.substr(0, 20) + '...' %></td>
                     <td style="display: flex;align-items: center;justify-content: center;">
-                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;">E</button>
-                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;width:30px;cursor: pointer;"><a href="/admin/panel/deleteEvent/<%= events[i].slug %>?_method=DELETE">D</a></button>
+                        <button style="background-color: transparent;padding:3px 5px;margin:0 5px;border:2px solid blue;border-radius:10px;color:whitesmoke;cursor: pointer;"><a href="/admin/panel/deleteEvent/<%= events[i].slug %>?_method=DELETE">DELETE</a></button>
                     </td>
                 </tr>
                 <% } %> 

@@ -16,5 +16,6 @@ router.route('/panel/logout').get(admin.logoutAdmin);
 router.route('/panel/deleteLaunch/:slug').delete(admin.deleteLaunch);
 router.route('/panel/deleteAstronaut/:slug').delete(admin.deleteAstronaut);
 router.route('/panel/deleteEvent/:slug').delete(admin.deleteEvent);
+router.route('/panel/deleteNews/:slug').delete(admin.deleteNews);
 
 module.exports = router;
