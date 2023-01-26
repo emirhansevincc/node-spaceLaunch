@@ -120,14 +120,25 @@
 
     <div class="" style="display: flex;align-items: center;justify-content: center;height: 100vh;background-color: #111;">
         <form action="/admin/login" method="POST">
+            <% if (flashMessages) { %>
+                <% if (flashMessages.success) { %>
+                  <div class="alert alert-success" style="display: flex;align-items: center;justify-content: center;background-color: green;color: whitesmoke;padding: 10px;margin-bottom: 20px;text-align: center;">
+                        <%= flashMessages.success %>
+                    </div>
+              <% } else if (flashMessages.error) { %>
+               <div class="alert alert-danger" style="display: flex;align-items: center;justify-content: center;background-color: red;color: whitesmoke;padding: 10px;margin-bottom: 30px;text-align: center;">
+                <%= flashMessages.error %>
+                </div>
+                <% } %>
+              <% } %>
             <div class="group" style="margin-bottom: 30px;">
-                <input type="text" name="adminEmail" required>
+                <input type="email" name="adminEmail" >
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Email</label>
             </div>
             <div class="group">
-                <input type="password" name="adminPassword" required>
+                <input type="password" name="adminPassword" >
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Password</label>

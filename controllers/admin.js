@@ -120,15 +120,15 @@ exports.loginAdmin = async(req, res) => {
                     bcrypt.compare(adminPassword, admin.password, (err, result) => {
                         if (result === true) {
                             req.session.adminId = admin._id;
+                        req.flash("success", "Logged in successfully, welcome back!");
                             res.status(200).redirect('/admin/panel');
                         } else {
-                            res.status(401).json({
-                                status: 'fail',
-                                message: 'Password is incorrect'
-                            });
+                            req.flash("error", "Password is incorrect");
+                            res.status(401).redirect('/admin');
                         }
                     })
                 } else {
+                    req.flash("error", "Email is incorrect or user doesn't exist");
                     res.status(404).redirect('/admin');
                 }
             }
